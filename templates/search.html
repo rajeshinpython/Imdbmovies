@@ -1,0 +1,21 @@
+{% extends "mainmenu.html" %}
+
+
+{%  block content %}
+    {% include 'navmain.html' %}
+
+     <table align="center">
+         {% for i in context %}
+            <tr align="center"><th><h6><img src="{{ i.timage}}" height="500" width="300" ></h6></th>
+            <th align="center"><h6><h5> Title:</h5>{{ i.l }}</h6></th>
+            <th align="center"><h6><h5>Stars:</h5> {{ i.s }}</h6></th>
+            <th align="center"><a href="{% url 'detail_view' i.id %}">More Details</a> </th></tr>
+
+
+
+        {% endfor %}
+     {% if message %}
+         <h4 align="center" style="padding-top: 200px">{{ message }}</h4>
+     {% endif %}
+
+{% endblock content %}

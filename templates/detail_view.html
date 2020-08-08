@@ -1,0 +1,17 @@
+{% extends "mainmenu.html" %}
+
+
+{%  block content %}
+    {% include 'navmain.html' %}
+
+     <table align="center">
+         {% for i in context %}
+            <tr align="center"><th><h6><img src="{{ i.image}}" height="300" width="500" ></h6></th><tr>
+            <tr align="center"><th align="center"><h6>{{ i.l }}</h6></th><tr>
+            <tr align="center"><th align="center"><h6>Duration :{{ i.s }}</h6></th></tr>
+
+
+
+        {% endfor %}
+
+{% endblock content %}
